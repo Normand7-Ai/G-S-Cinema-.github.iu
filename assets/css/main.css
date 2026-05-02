@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    height: 70px;
+}
+main {
+    flex: 1; /* بيخلي النص ياخد المساحة الفاضية ويطرد الفوتر لتحت */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    display: block;
+    height: 15px; 
+}

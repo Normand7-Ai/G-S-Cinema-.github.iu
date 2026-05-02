@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&S Cinema - Movie Details</title>
+    <link id="theme-style" rel="stylesheet" href="assets/css/gold-theme.css">
+    <style>
+        .video-container { margin: 20px 0; border: 2px solid var(--gold-color); border-radius: 10px; overflow: hidden; }
+        .movie-info-text { line-height: 1.6; }
+        .movie-meta { margin-top: 15px; display: flex; gap: 20px; color: var(--gold-color); }
+    </style>
+</head>
+<body class="home-page details-page"> 
+    <header class="details-header">
+        <div class="logo-container">
+            <div class="logo">G & S <span class="logo-sub">CINEMA</span></div>
+        </div>
+        <button class="btn-back" onclick="location.href='home.html'">← Back to Home</button>
+    </header>
+
+    <main>
+        <div class="movie-details-content">
+            <h1 id="movieTitle">Loading...</h1>
+            
+            <div class="video-container" id="videoWrapper">
+                </div>
+
+            <div class="movie-info-text">
+                <h3>Storyline</h3>
+                <p id="movieStory">Select a movie to see its story.</p>
+                
+                <div class="movie-meta" id="movieMeta">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 G&S Cinema </p>
+    </footer>
+
+    <script src="assets/js/theme-switcher.js"></script>
+    <script>
+        // قاموس بيانات الأفلام
+        const moviesData = {
+            "from": {
+                title: "From (Series)",
+                story: "Unravel the mystery of a city in middle America that imprisons everyone who enters. The residents struggle to maintain a sense of normalcy and seek a way out while surviving the threats of the surrounding forest.",
+                video: "https://www.youtube.com/embed/p17LpZ26Z_w",
+                meta: "Genre: Horror, Mystery | Rating: ⭐ 7.7"
+            },
+            "inseption": {
+                title: "Inception (Movie)",
+                story: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+                video: "https://www.youtube.com/embed/YoHD9XEInc0",
+                meta: "Genre: Sci-Fi, Action | Rating: ⭐ 8.8"
+            },
+            "john wick": {
+                title: "John Wick (Movie)",
+                story: "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.",
+                video: "https://www.youtube.com/embed/C0BMx-qxsP0",
+                meta: "Genre: Action, Thriller | Rating: ⭐ 7.4"
+            },
+            "interstellar": {
+                title: "Interstellar (Movie)",
+                story: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival as Earth faces a global collapse.",
+                video: "https://www.youtube.com/embed/zSWdZVtXT7E",
+                meta: "Genre: Sci-Fi, Drama | Rating: ⭐ 8.7"
+            },
+            "breaking bad": {
+                title: "Breaking Bad (Series)",
+                story: "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
+                video: "https://www.youtube.com/embed/HhesaQXLuRY",
+                meta: "Genre: Crime, Drama | Rating: ⭐ 9.5"
+            },
+            "rush hour": {
+                title: "Rush Hour (Movie)",
+                story: "A loyal Hong Kong inspector and a reckless L.A.P.D. detective team up to rescue a kidnapped girl and stop a criminal mastermind.",
+                video: "https://www.youtube.com/embed/JMiFsFQpNJM",
+                meta: "Genre: Comedy, Action | Rating: ⭐ 7.0"
+            }
+            // تقدر تضيف باقي الأفلام هنا بنفس الطريقة
+        };
+
+        // وظيفة تحديث الصفحة
+        function loadMovieDetails() {
+            const selected = localStorage.getItem('selectedMovie') || "inseption"; // الافتراضي
+            const movie = moviesData[selected.toLowerCase().trim()];
+
+            if (movie) {
+                document.getElementById('movieTitle').innerText = movie.title;
+                document.getElementById('movieStory').innerText = movie.story;
+                document.getElementById('movieMeta').innerText = movie.meta;
+                document.getElementById('videoWrapper').innerHTML = `
+                    <iframe width="100%" height="450" src="${movie.video}" 
+                    frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                document.getElementById('movieTitle').innerText = selected;
+                document.getElementById('movieStory').innerText = "Details coming soon for this title!";
+            }
+        }
+
+        // تشغيل الدالة عند تحميل الصفحة
+        window.onload = loadMovieDetails;
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&S Cinema - Home</title>
+    <link id="theme-style" rel="stylesheet" href="assets/css/gold-theme.css">
+</head>
+<body class="home-page">
+    <header>
+        <div class="logo-container">
+            <div class="logo">G & S <span class="logo-sub">CINEMA</span></div>
+        </div>
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="search.html">Search</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button id="btn-switch" onclick="toggleTheme()">Switch Theme</button>
+    </header>
+    <main>
+        <section class="category">
+            <h2>Sci-Fi</h2><div class="rrooww">
+            <div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('from')">
+                    <img src="assets\img\sci-fi1.jpg" alt="from">
+                    <div class="movie-info">
+                        <h3>from      (series)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'from  (series)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('inseption')">
+                    <img src="assets\img\sci-fi2.jpeg" alt="inseption">
+                    <div class="movie-info">
+                        <h3>inseption      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'inseption      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('lost')">
+                    <img src="assets\img\sci-fi3.png" alt="lost">
+                    <div class="movie-info">
+                        <h3>lost      (series)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'lost  (series)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('i am mother')">
+                    <img src="assets\img\sci-fi4.jpg" alt="i am mother">
+                    <div class="movie-info">
+                        <h3>i am mother      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'i am mother      (movie)')">★</button>
+                    </div>
+                </div>
+                </div></div>	
+        </section>
+        <section class="category">
+            <h2>Action</h2><div class="rrooww">
+            <div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('john wick')">
+                    <img src="assets\img\action1.jpg" alt="john wick">
+                    <div class="movie-info">
+                        <h3>john wick      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'john wick      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('equalizer')">
+                    <img src="assets\img\action3.jpg" alt="equalizer">
+                    <div class="movie-info">
+                        <h3>equalizer      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'equalizer      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('game of thrones')">
+                    <img src="assets\img\action2.jpg" alt="game of thrones">
+                    <div class="movie-info">
+                        <h3>game of thrones      (series)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'game of thrones  (series)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('breaking bad')">
+                    <img src="assets\img\action4.jpg" alt="breaking bad">
+                    <div class="movie-info">
+                        <h3>breaking bad      (series)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'breaking bad  (series)')">★</button>
+                    </div>
+                </div>
+                </div></div>	
+        </section>
+        <section class="category">
+            <h2>Comedy</h2><div class="rrooww">
+            <div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('ride along')">
+                    <img src="assets\img\comedy1.jpg" alt="ride along">
+                    <div class="movie-info">
+                        <h3>ride along      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'ride along      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('mr & mrs.smith')">
+                    <img src="assets\img\comedy2.jpg" alt="mr & mrs.smith">
+                    <div class="movie-info">
+                        <h3>mr & mrs.smith      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'mr & mrs.smith      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('rush hour')">
+                    <img src="assets\img\comedy3.jpg" alt="rush hour">
+                    <div class="movie-info">
+                        <h3>rush hour      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'rush hour      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('bullet train')">
+                    <img src="assets\img\comedy4.jpg" alt="bullet train">
+                    <div class="movie-info">
+                        <h3>bullet train      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'bullet train      (movie)')">★</button>
+                    </div>
+                </div>
+                </div></div>	
+        </section>
+        <section class="category">
+            <h2>Space</h2><div class="rrooww">
+            <div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('astronaut')">
+                    <img src="assets\img\space4.jpg" alt="astronaut">
+                    <div class="movie-info">
+                        <h3>astronaut      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'astronaut      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('avatar')">
+                    <img src="assets\img\space1.jpg" alt="avatar">
+                    <div class="movie-info">
+                        <h3>avatar      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'avatar      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('passengers')">
+                    <img src="assets\img\space2.jpg" alt="passengers">
+                    <div class="movie-info">
+                        <h3>passengers      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'passengers      (movie)')">★</button>
+                    </div>
+                </div>
+                </div>
+			<div class="movie-grid">
+                <div class="movie-card" onclick="goToDetails('interstellar')">
+                    <img src="assets\img\space3.jpg" alt="interstellar">
+                    <div class="movie-info">
+                        <h3>interstellar      (movie)</h3>
+                        <button class="wish-btn" onclick="addToWatchlist(event, 'interstellar      (movie)')">★</button>
+                    </div>
+                </div>
+                </div></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 G&S Cinema - All rights reserved.</p>
+    </footer>
+    
+	<script>
+    function goToDetails(movieName) {
+    localStorage.setItem('selectedMovie', movieName);
+    window.location.href = 'details.html';}</script>
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/logic.js"></script>
+</body>
+</html>

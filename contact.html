@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&S Cinema - Contact Us</title>
+    <link id="theme-style" rel="stylesheet" href="assets/css/gold-theme.css">
+</head>
+<body class="home-page">
+    
+    <header>
+        <div class="logo-container">
+            <div class="logo">G & S <span class="logo-sub">CINEMA</span></div>
+        </div>
+        
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+        <button id="btn-switch" onclick="toggleTheme()">Switch Theme</button>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <h2>Contact Us / Review</h2>
+            <div class="contact-card">
+                <p>We value your feedback. Let us know your thoughts about G&S Cinema!</p>
+                <textarea id="feedback" placeholder="Write your review or feedback here..."></textarea>
+                <button class="btn-main" onclick="submitFeedback()">Submit Review</button>
+            </div>
+
+            <div class="danger-zone">
+                <hr>
+                <p>Account Management</p>
+                <button class="btn-logout" onclick="logout()">Logout Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 G&S Cinema - Noor Eldeen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitFeedback() {
+            const text = document.getElementById('feedback').value;
+            if(text) {
+                alert("Thank you for your feedback!");
+                document.getElementById('feedback').value = "";
+            } else {
+                alert("Please write something first.");
+            }
+        }
+    </script>
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/logic.js"></script>
+</body>
+</html>

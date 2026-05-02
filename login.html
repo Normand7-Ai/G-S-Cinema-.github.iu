@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&S Cinema - Login</title>
+    <link id="theme-style" rel="stylesheet" href="assets/css/gold-theme.css">
+</head>
+<body class="auth-page">
+    
+    <header class="auth-header">
+        <button id="btn-switch" onclick="toggleTheme()">Switch Theme</button>
+    </header>
+
+    <div class="login-box">
+        <div class="logo-container">
+            <div class="logo">G & S <span class="logo-sub">CINEMA</span></div>
+        </div>
+        
+        <h2>Login</h2>
+        <form onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="Loginpass" placeholder="Password" required>
+            </div>
+            <button class="btn-main" type="submit">Sign In</button>
+        </form>
+        
+        <div class="auth-links">
+            <a href="signup.html">Create Account</a>
+            <span class="divider">|</span>
+            <a href="#" onclick="enterAsGuest()">Guest Access</a>
+        </div>
+    </div>
+
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

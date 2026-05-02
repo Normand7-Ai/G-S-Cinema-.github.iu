@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&S Cinema - Watchlist</title>
+    <link id="theme-style" rel="stylesheet" href="assets/css/gold-theme.css">
+</head>
+<body class="home-page">
+    
+    <header>
+        <div class="logo-container">
+            <div class="logo">G & S <span class="logo-sub">CINEMA</span></div>
+        </div>
+        
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="watchlist.html" class="active">Watchlist</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button id="btn-switch" onclick="toggleTheme()">Switch Theme</button>
+    </header>
+
+    <main>
+        <div class="watchlist-container">
+            <h2>Your Watchlist ★</h2>
+            <div id="watchlistContent" class="watchlist-grid">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 G&S Cinema - Noor Eldeen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const list = JSON.parse(localStorage.getItem('watchlist')) || [];
+        const contentArea = document.getElementById('watchlistContent');
+
+        if (list.length > 0) {
+            // هنا بنحول الأسماء لكروت شيك بدل ما كانت مجرد كلام مرصوص
+            contentArea.innerHTML = list.map(movie => `
+                <div class="watchlist-item">
+                    <span>${movie}</span>
+                    <button class="remove-btn" onclick="removeFromWatchlist('${movie}')">Remove</button>
+                </div>
+            `).join('');
+        } else {
+            contentArea.innerHTML = '<p class="empty-msg">Your list is empty. Start adding some movies!</p>';
+        }
+
+        function removeFromWatchlist(name) {
+            let currentList = JSON.parse(localStorage.getItem('watchlist')) || [];
+            currentList = currentList.filter(m => m !== name);
+            localStorage.setItem('watchlist', JSON.stringify(currentList));
+            location.reload(); // تحديث الصفحة لرؤية النتيجة
+        }
+    </script>
+    <script src="assets/js/theme-switcher.js"></script>
+</body>
+</html>
