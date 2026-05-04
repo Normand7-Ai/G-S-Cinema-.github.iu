@@ -30,7 +30,7 @@ function enterAsGuest() {
     localStorage.setItem('isGuest', 'true');
     window.location.href = "home.html";
 }
-// فحص الإيميل أثناء الكتابة
+
 function validateEmail() {
     const emailInput = document.getElementById('email') || document.getElementById('loginEmail');
     const emailError = document.getElementById('emailError');
@@ -39,11 +39,11 @@ function validateEmail() {
     if (!emailValue.includes('@')) {
         emailError.innerText = "Email must contain @";
     } else {
-        emailError.innerText = ""; // يمسح الرسالة لو الشرط تحقق
+        emailError.innerText = ""; 
     }
 }
 
-// فحص الباسورد أثناء الكتابة
+
 function validatePass() {
     const passInput = document.getElementById('password') || document.getElementById('Loginpass');
     const passError = document.getElementById('passError');
@@ -52,20 +52,20 @@ function validatePass() {
     if (passValue.length > 0 && passValue.length < 8) {
         passError.innerText = "Password is too short (min 8 characters)";
     } else {
-        passError.innerText = ""; // يمسح الرسالة لو الشرط تحقق
+        passError.innerText = ""; 
     }
 }
-// فحص الاسم أثناء الكتابة
+
 function validateName() {
     const nameInput = document.getElementById('username');
     const nameError = document.getElementById('nameError');
-    const nameValue = nameInput.value.trim(); // trim عشان نشيل المسافات الزايدة
+    const nameValue = nameInput.value.trim(); 
 
     if (nameValue === "") {
         nameError.innerText = "Name is required";
     } else if (nameValue.length < 3) {
         nameError.innerText = "Name is too short (min 3 characters)";
     } else {
-        nameError.innerText = ""; // يمسح الرسالة لو كله تمام
+        nameError.innerText = ""; 
     }
 }

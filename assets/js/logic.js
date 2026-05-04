@@ -1,4 +1,4 @@
-// إضافة للووتش لست (النجمة)
+
 function addToWatchlist(event, movieName) {
     event.stopPropagation();
     let list = JSON.parse(localStorage.getItem('watchlist')) || [];
@@ -37,7 +37,6 @@ function searchMovie() {
             </div>
         `).join('');
     } else {
-        // الرسالة اللي طلبتها بالإنجليزية
         results.innerHTML = `<p class="error-text">⚠️ Sorry, "${input}" is not available or hasn't been added yet.</p>`;
     }
 }

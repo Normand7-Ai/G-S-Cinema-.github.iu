@@ -37,7 +37,7 @@ body.auth-page .login-box {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
 }
 body.auth-page .logo {
-    color: #d4af37; /* ذهبي ثابت */
+    color: #d4af37; 
     font-weight: bold;
     font-size: 1.8rem;
     letter-spacing: 1px;
@@ -114,22 +114,19 @@ header nav a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weigh
     min-width: 160px; height: 250px; background: #fff; 
     border-radius: 10px; overflow: hidden; box-shadow: 0 3px 6px rgba(0,0,0,0.05); 
 }
-/* --- تنسيق شريط التبديل في الثيم الفضي (ينزل تحت) --- */
 body.auth-page .auth-header {
-    position: fixed; /* تثبيت الشريط */
-    bottom: 0;       /* أسفل الشاشة */
-    top: auto;       /* إلغاء مكانه القديم فوق */
+    position: fixed; 
+    bottom: 0;       
+    top: auto;       
     width: 100%;
-    height: 70px;    /* نفس ارتفاع المنيو اللي هيكون في الهوم */
-    background: #2c3e50; /* لون الشريط الفضي الداكن */
+    height: 70px;    
+    background: #2c3e50; 
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 3px solid #bdc3c7; /* الخط الفضي اللي فوق المنيو */
+    border-top: 3px solid #bdc3c7; 
     z-index: 1000;
 }
-
-/* زر التبديل داخل الشريط السفلي */
 body.auth-page #btn-switch {
     background: #d4af37;
     color: #fff;
@@ -140,17 +137,12 @@ body.auth-page #btn-switch {
     border-radius: 5px;
     font-weight: bold;
 }
-
-/* تعديل بسيط لمكان صندوق الدخول عشان ميتدارىش بالشريط السفلي */
 body.auth-page {
-    padding-bottom: 80px; /* مسافة أمان عشان المنيو م يغطيش الروابط */
+    padding-bottom: 80px; 
 }
-
-/* --- تنسيق الروابط واللوجو (ثابت كما هو) --- */
 body.auth-page .logo { color: #d4af37; font-weight: bold; font-size: 1.8rem; }
 body.auth-page .logo-sub { color: #7f8c8d; letter-spacing: 3px; }
 .auth-links a { color: #2980b9; text-decoration: none; }
-/* --- تنسيق صفحة الهوم (الثيم الفضي - منيو سفلي) --- */
 body.home-page {
     padding-bottom: 100px; 
     background: #f4f7f6;
@@ -244,14 +236,11 @@ body.home-page .movie-info {
     text-align: center;
     flex-direction: column;
 }
-
 body.home-page .movie-info h3 {
     font-size: 14px;
     margin: 5px 0;
     color: #333;
 }
-
-/* الفوتر في السيلفر (مخفي أو بسيط تحت المنيو) */
 body.home-page footer {
     text-align: center;
     padding: 20px;
@@ -259,30 +248,24 @@ body.home-page footer {
     font-size: 12px;
     margin-bottom: 80px;
 }
-/* --- تنسيق صفحة البحث --- */
 .search-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     padding-top: 20px;
 }
-
 .search-box {
     position: relative;
     margin-bottom: 40px;
 }
-
-/* شكل حقل البحث */
 #searchInput {
     width: 100%;
     padding: 15px 50px 15px 20px;
     font-size: 18px;
-    border-radius: 30px; /* خليه بيضاوي شيك */
+    border-radius: 30px; 
     outline: none;
     transition: 0.3s;
 }
-
-/* في الجولد يكون غامق */
 body.home-page #searchInput {
     background: #111;
     border: 1px solid #d4af37;
@@ -359,7 +342,7 @@ body.home-page header nav a {
 }
 body.home-page header nav a:hover,
 body.home-page header nav a.active {
-    color: #d4af37; /* يقلب ذهبي عند الوقوف عليه */
+    color: #d4af37; 
     border-bottom: 2px solid #d4af37;
 }
 .logo-container {
@@ -470,4 +453,54 @@ body[href*="silver"] textarea {
     font-size: 14px;
     color: #888;
     margin: 10px 0;
+}
+@media (max-width: 768px) {
+    
+    body.home-page main {
+        padding: 15px; 
+    }
+    
+    
+    body.home-page .category .rrooww {
+        justify-content: center; 
+        gap: 15px; 
+    }
+
+    
+    body.home-page .movie-card {
+        min-width: 150px; 
+        width: 45%; 
+        height: auto; 
+        padding-bottom: 10px;
+    }
+
+    body.home-page .movie-card img {
+        height: 180px;
+    }
+
+    
+    body.home-page header {
+        padding: 0 10px; 
+    }
+    
+    body.home-page header nav {
+        gap: 8px; 
+    }
+
+    body.home-page header nav a {
+        font-size: 12px; 
+        padding: 6px 8px; 
+    }
+
+    
+    body.home-page #btn-switch {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    
+    body.home-page header .logo-container {
+        scale: 0.6;
+        margin-right: -15px; 
+    }
 }

@@ -41,7 +41,6 @@
         const contentArea = document.getElementById('watchlistContent');
 
         if (list.length > 0) {
-            // هنا بنحول الأسماء لكروت شيك بدل ما كانت مجرد كلام مرصوص
             contentArea.innerHTML = list.map(movie => `
                 <div class="watchlist-item">
                     <span>${movie}</span>
@@ -56,7 +55,7 @@
             let currentList = JSON.parse(localStorage.getItem('watchlist')) || [];
             currentList = currentList.filter(m => m !== name);
             localStorage.setItem('watchlist', JSON.stringify(currentList));
-            location.reload(); // تحديث الصفحة لرؤية النتيجة
+            location.reload(); 
         }
     </script>
     <script src="assets/js/theme-switcher.js"></script>

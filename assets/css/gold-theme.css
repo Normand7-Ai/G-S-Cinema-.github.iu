@@ -111,7 +111,7 @@ body.auth-page h2 {
 }
 body.home-page {
     display: flex;
-    flex-direction: row; /* المنيو جنب المحتوى */
+    flex-direction: row; 
     background: #000;
 }
 body.home-page header {
@@ -201,7 +201,7 @@ body.home-page footer {
     width: 100%;
     padding: 15px 50px 15px 20px;
     font-size: 18px;
-    border-radius: 30px; /* خليه بيضاوي شيك */
+    border-radius: 30px; 
     outline: none;
 }
 body.home-page #searchInput {
@@ -336,4 +336,80 @@ body[href*="silver"] textarea {
     font-size: 14px;
     color: #888;
     margin: 10px 0;
+}
+
+
+@media (max-width: 768px) {
+    
+    body.home-page {
+        flex-direction: column; 
+    }
+
+    body.home-page header {
+        width: 100%;
+        height: auto;
+        position: relative; 
+        border-right: none;
+        border-bottom: 2px solid #d4af37;
+        padding: 20px 10px;
+    }
+
+    
+    body.home-page header nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 5px;
+    }
+
+    body.home-page header nav a {
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 13px;
+        border-left: none; 
+        border-bottom: 2px solid transparent; 
+    }
+    
+    body.home-page header nav a.active, 
+    body.home-page header nav a:hover {
+        border-left: none;
+        border-bottom: 2px solid #d4af37; 
+    }
+
+    
+    body.home-page main {
+        margin-left: 0; 
+        padding: 15px;
+        width: 100%;
+    }
+
+    
+    .profile-table td {
+        display: block;
+        width: 100% !important;
+        padding: 5px 0;
+    }
+
+    .profile-table td:first-child {
+        margin-top: 10px;
+    }
+
+    
+    body.home-page .movie-card {
+        height: auto;
+        flex-direction: column; 
+    }
+
+    body.home-page .movie-card img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    body.home-page .movie-info {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
