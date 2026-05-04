@@ -20,10 +20,12 @@
         <h2>Login</h2>
         <form onsubmit="handleLogin(event)">
             <div class="input-group">
-                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="email" id="loginEmail" placeholder="Email" required oninput="validateEmail()">
+                <span id="emailError" style="color: red; font-size: 0.7rem; display: block; margin-top: 5px;"></span>
             </div>
             <div class="input-group">
-                <input type="password" id="Loginpass" placeholder="Password" required>
+                <input type="password" id="Loginpass" placeholder="Password" required oninput="validatePass()">
+                <span id="passError" style="color: red; font-size: 0.7rem; display: block; margin-top: 5px;"></span>
             </div>
             <button class="btn-main" type="submit">Sign In</button>
         </form>

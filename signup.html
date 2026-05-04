@@ -19,20 +19,23 @@
         <h2>Create Account</h2>
         <form onsubmit="handleSignup(event)">
             <div class="input-group">
-                <input type="text" id="username" placeholder="Full Name" required>
+                <input type="text" id="username" placeholder="Full Name" required oninput="validateName()">
+                <span id="nameError" style="color: red; font-size: 0.7rem; display: block; margin-top: 5px;"></span>
             </div>
             <div class="input-group">
-                <input type="email" id="email" placeholder="Email" required>
+                <input type="email" id="email" placeholder="Email" required oninput="validateEmail()">
+                <span id="emailError" style="color: red; font-size: 0.7rem; display: block; margin-top: 5px;"></span>
             </div>
             <div class="input-group">
-                <input type="password" id="password" placeholder="Password (min 8)" required minlength="8">
+                <input type="password" id="password" placeholder="Password (min 8)" required minlength="8" oninput="validatePass()">
+                <span id="passError" style="color: red; font-size: 0.7rem; display: block; margin-top: 5px;"></span>
             </div>
             <button class="btn-main" type="submit">Register Now</button>
         </form>
 
         <div class="auth-links">
             <p style="color: #888; font-size: 0.8rem; margin-bottom: 10px;">Already have an account?</p>
-            <a href="login.html">Login here</a>
+            <a href="index.html">Login here</a>
         </div>
     </div>
 
