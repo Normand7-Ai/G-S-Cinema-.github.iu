@@ -1,0 +1,525 @@
+* { box-sizing: border-box; transition: 0.3s ease; }
+body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f7f6; color: #2c3e50; overflow-x: hidden; }
+body.auth-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.auth-header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+#btn-switch {
+    background: #d4af37; 
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#btn-switch:hover {
+    background: #b8962e;
+}
+body.auth-page .login-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+}
+body.auth-page .logo {
+    color: #d4af37; /* ذهبي ثابت */
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+body.auth-page .logo-sub {
+    color: #7f8c8d; 
+    font-size: 0.9rem;
+    font-weight: normal;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 20px;
+}
+body.auth-page h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: bold;
+}
+body.auth-page input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #333;
+    outline: none;
+}
+body.auth-page input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+}
+body.auth-page .btn-main {
+    width: 100%;
+    padding: 12px;
+    background: #5dade2; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+body.auth-page .btn-main:hover {
+    background: #3498db;
+}
+.auth-links {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.auth-links a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+}
+.auth-links a:hover {
+    text-decoration: underline;
+}
+.divider {
+    color: #ccc;
+    margin: 0 10px;
+}
+body.home-page { padding-bottom: 80px; }
+header { 
+    width: 100%; height: 70px; position: fixed; bottom: 0; 
+    background: #2c3e50; display: flex; justify-content: space-around; 
+    align-items: center; z-index: 1000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+header nav a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.movie-grid { display: flex; overflow-x: auto; gap: 15px; padding: 15px 0; }
+.movie-card { 
+    min-width: 160px; height: 250px; background: #fff; 
+    border-radius: 10px; overflow: hidden; box-shadow: 0 3px 6px rgba(0,0,0,0.05); 
+}
+/* --- تنسيق شريط التبديل في الثيم الفضي (ينزل تحت) --- */
+body.auth-page .auth-header {
+    position: fixed; /* تثبيت الشريط */
+    bottom: 0;       /* أسفل الشاشة */
+    top: auto;       /* إلغاء مكانه القديم فوق */
+    width: 100%;
+    height: 70px;    /* نفس ارتفاع المنيو اللي هيكون في الهوم */
+    background: #2c3e50; /* لون الشريط الفضي الداكن */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid #bdc3c7; /* الخط الفضي اللي فوق المنيو */
+    z-index: 1000;
+}
+
+/* زر التبديل داخل الشريط السفلي */
+body.auth-page #btn-switch {
+    background: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* تعديل بسيط لمكان صندوق الدخول عشان ميتدارىش بالشريط السفلي */
+body.auth-page {
+    padding-bottom: 80px; /* مسافة أمان عشان المنيو م يغطيش الروابط */
+}
+
+/* --- تنسيق الروابط واللوجو (ثابت كما هو) --- */
+body.auth-page .logo { color: #d4af37; font-weight: bold; font-size: 1.8rem; }
+body.auth-page .logo-sub { color: #7f8c8d; letter-spacing: 3px; }
+.auth-links a { color: #2980b9; text-decoration: none; }
+/* --- تنسيق صفحة الهوم (الثيم الفضي - منيو سفلي) --- */
+body.home-page {
+    padding-bottom: 100px; 
+    background: #f4f7f6;
+}
+body.home-page header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #2c3e50;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    border-top: 4px solid #bdc3c7; 
+    z-index: 2000;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+}
+body.home-page header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 0.8;
+}
+body.home-page header nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+body.home-page header nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+body.home-page header nav a:hover,
+body.home-page header nav a.active {
+    background: #34495e; 
+    color: #d4af37;    
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+}
+body.home-page #btn-switch {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+body.home-page main {
+    padding: 30px;
+}
+body.home-page .category h2 {
+    color: #2c3e50;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+body.home-page .category .rrooww  {
+    display: flex;  
+	flex-wrap: wrap;
+}
+body.home-page .movie-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+body.home-page .movie-card {
+    min-width: 180px;
+    height: 280px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex-direction: column; 
+}
+body.home-page .movie-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+body.home-page .movie-info {
+    padding: 10px;
+    text-align: center;
+    flex-direction: column;
+}
+
+body.home-page .movie-info h3 {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+/* الفوتر في السيلفر (مخفي أو بسيط تحت المنيو) */
+body.home-page footer {
+    text-align: center;
+    padding: 20px;
+    color: #95a5a6;
+    font-size: 12px;
+    margin-bottom: 80px;
+}
+/* --- تنسيق صفحة البحث --- */
+.search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* شكل حقل البحث */
+#searchInput {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    font-size: 18px;
+    border-radius: 30px; /* خليه بيضاوي شيك */
+    outline: none;
+    transition: 0.3s;
+}
+
+/* في الجولد يكون غامق */
+body.home-page #searchInput {
+    background: #111;
+    border: 1px solid #d4af37;
+    color: #fff;
+}
+body[href*="silver"] #searchInput {
+    background: #fff;
+    border: 1px solid #bdc3c7;
+    color: #2c3e50;
+}
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.error-text {
+    color: #888;
+    font-style: italic;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+#resultsArea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+body.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    padding-bottom: 80px; 
+}
+body.home-page main {
+    flex: 1;
+    padding: 20px;
+}
+body.home-page footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: transparent;
+    color: #7f8c8d;
+    font-size: 13px;
+    margin-bottom: 20px; 
+}
+body.home-page header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #2c3e50;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #bdc3c7;
+    z-index: 2000;
+}
+body.home-page header nav {
+    display: flex;
+    gap: 20px;
+}
+body.home-page header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+body.home-page header nav a:hover,
+body.home-page header nav a.active {
+    color: #d4af37; /* يقلب ذهبي عند الوقوف عليه */
+    border-bottom: 2px solid #d4af37;
+}
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.logo { color: #d4af37; font-weight: bold; font-size: 24px; }
+.logo-sub { color: #bdc3c7; font-size: 14px; letter-spacing: 2px; }
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.profile-container h2 {
+    color: #d4af37;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.profile-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.profile-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px; 
+    margin-bottom: 20px;
+}
+.profile-table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+.profile-table td:first-child {
+    width: 30%;
+    font-weight: bold;
+    color: #d4af37;
+}
+.profile-table input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #1a1a1a;
+    color: #fff;
+    outline: none;
+}
+body[href*="silver"] .profile-table input {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+}
+.profile-container .btn-main {
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-bottom: 40px;
+}
+.contact-card p {
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #111;
+    color: #fff;
+    resize: none; 
+    font-family: inherit;
+    margin-bottom: 15px;
+    outline: none;
+}
+body[href*="silver"] textarea {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+}
+.btn-logout {
+    width: 200px;
+    padding: 12px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-logout:hover {
+    background: #c0392b;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+}
+.danger-zone p {
+    font-size: 14px;
+    color: #888;
+    margin: 10px 0;
+}
+
+/* --- Mobile Responsiveness Fixes --- */
+@media (max-width: 768px) {
+    
+    body.home-page main {
+        padding: 15px; 
+    }
+    
+    
+    body.home-page .category .rrooww {
+        justify-content: center; 
+        gap: 15px; 
+    }
+
+    
+    body.home-page .movie-card {
+        min-width: 150px; 
+        width: 45%; 
+        height: auto; 
+        padding-bottom: 10px;
+    }
+
+    body.home-page .movie-card img {
+        height: 180px;
+    }
+
+    
+    body.home-page header {
+        padding: 0 10px; 
+    }
+    
+    body.home-page header nav {
+        gap: 8px; 
+    }
+
+    body.home-page header nav a {
+        font-size: 12px; 
+        padding: 6px 8px; 
+    }
+
+    
+    body.home-page #btn-switch {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    
+    body.home-page header .logo-container {
+        scale: 0.6;
+        margin-right: -15px; 
+    }
+}
