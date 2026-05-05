@@ -111,7 +111,7 @@ body.auth-page h2 {
 }
 body.home-page {
     display: flex;
-    flex-direction: row; /* المنيو جنب المحتوى */
+    flex-direction: row; 
     background: #000;
 }
 body.home-page header {
@@ -201,7 +201,7 @@ body.home-page footer {
     width: 100%;
     padding: 15px 50px 15px 20px;
     font-size: 18px;
-    border-radius: 30px; /* خليه بيضاوي شيك */
+    border-radius: 30px; 
     outline: none;
 }
 body.home-page #searchInput {
@@ -413,3 +413,60 @@ body[href*="silver"] textarea {
         text-align: center;
     }
 }
+.comparison-section {  padding: 20px;   margin-bottom: 40px; }
+    .comparison-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #ccc;
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .advanced-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #000;
+        font-family: Arial, sans-serif;
+    }
+    .advanced-table th, .advanced-table td {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: center;
+    }
+    .table-header {
+        background-color: #000;
+        color: #fff;
+    }
+    .movie-thumb {
+        width: 150px;
+        border-radius: 8px;
+        border: 1px solid #000;
+    }
+    .nested-table {
+        width: 100%;
+        margin-top: 10px;
+        border: none;
+    }
+    .nested-table td {
+        background-color: #f9f9f9;
+        font-size: 0.9rem;
+        border: none;
+        text-align: left;
+        padding: 5px;
+    }
+    .label {
+        font-weight: bold;
+        color: #555;
+    }
+    .home-page.dark-theme .advanced-table {
+        background-color: #1a1a1a;
+        color: #fff;
+        border-color: #fff;
+    }
+    .home-page.dark-theme .nested-table td {
+        background-color: #333;
+        color: #ccc;
+    }
