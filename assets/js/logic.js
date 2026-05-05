@@ -17,121 +17,40 @@ const moviesList = [
     "astronaut", "avatar", "passengers", "interstellar"
 ];
 
-// Variables to control views and pages
-let currentViewMode = 'list';
-let currentPage = 1;
-const itemsPerPage = 4; // Shows 4 movies per page so you can test the pagination
-let searchResults = [];
+// دالة لتغيير شكل التنسيق
+function changeLayout(layoutName) {
+    const results = document.getElementById('resultsArea');
+    results.className = layoutName; // يغير الـ Class إلى grid-view أو list-view
+}
 
 function searchMovie() {
     const input = document.getElementById('searchInput').value.toLowerCase().trim();
-    const resultsArea = document.getElementById('resultsArea');
-    const paginationArea = document.getElementById('paginationArea');
-    const viewControls = document.getElementById('viewControls');
-
-    if (input === "") {
-        resultsArea.innerHTML = '<p class="error-text">No results found yet.</p>';
-        paginationArea.innerHTML = '';
-        viewControls.style.display = 'none';
-        return;
-    }
-
-    // Filter movies and save to the new array
-    searchResults = moviesList.filter(movie => movie.includes(input));
-    currentPage = 1; // Reset to page 1 on every new search
-    viewControls.style.display = 'block';
-
-    renderResults();
-}
-
-function renderResults() {
-    const resultsArea = document.getElementById('resultsArea');
-    const viewControls = document.getElementById('viewControls');
+    const results = document.getElementById('resultsArea');
     
-    if (searchResults.length === 0) {
-        resultsArea.innerHTML = `<p class="error-text">⚠️ Sorry, "${document.getElementById('searchInput').value}" is not available.</p>`;
-        viewControls.style.display = 'none';
+    if (input === "") {
+        results.innerHTML = '<p class="error-text">No results found yet.</p>';
         return;
     }
 
-    // Change class name so CSS can style it correctly
-    resultsArea.className = currentViewMode + '-view';
+    const filtered = moviesList.filter(movie => movie.includes(input));
 
-    // Draw the HTML based on the selected view mode (Showing ALL results)
-    resultsArea.innerHTML = searchResults.map(movie => {
-        if (currentViewMode === 'grid') {
-            return `
-                <div class="search-result-grid" onclick="goToDetails('${movie}')" style="cursor:pointer; background:#111; border:1px solid #cca43b; padding:20px; border-radius:10px; text-align:center;">
-                    <h3 style="color:#ffa500; font-size:1.2rem; margin:0;">🎬 ${movie.toUpperCase()}</h3>
-                </div>`;
-        } else if (currentViewMode === 'details') {
-            return `
-                <div class="search-result-details" onclick="goToDetails('${movie}')" style="cursor:pointer; background:rgba(255,255,255,0.05); border-left:4px solid #cca43b; padding:15px; margin-bottom:10px; text-align:left;">
-                    <h3 style="color:#ffa500; margin: 0 0 10px 0;">🎬 ${movie.toUpperCase()}</h3>
-                    <p style="color:#bdc3c7; font-size:0.9rem; margin-bottom:10px;">Click here to view the full storyline, watch the trailer, and see cast details.</p>
-                    <button class="btn-main" style="width:auto; padding:5px 15px; font-size:0.8rem;">Watch Trailer</button>
-                </div>`;
-        } else {
-            // Default List View
-            return `
-                <div class="search-result-item" onclick="goToDetails('${movie}')" style="cursor:pointer; padding:15px; border-bottom:1px solid #cca43b; display:flex; justify-content:space-between; align-items:center;">
-                    <span style="color:#ffa500; font-size:1.1rem;">🎬 ${movie.toUpperCase()}</span>
-                    <span style="color:#cca43b; font-weight:bold;">View Details →</span>
-                </div>`;
-        }
-    }).join('');
+    if (filtered.length > 0) {
+        results.innerHTML = filtered.map(movie => `
+            <div class="search-result-item" onclick="goToDetails('${movie}')">
+                <div class="movie-card-content">
+                    <div class="movie-icon">🎬</div>
+                    <div class="movie-info">
+                        <span class="movie-title">${movie.toUpperCase()}</span>
+                        <p class="movie-desc">Click to see more details and ratings.</p>
+                        <button class="view-btn">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } else {
+        results.innerHTML = `<p class="error-text">⚠️ Sorry, "${input}" is not available.</p>`;
+    }
 }
-
-// Function to change the view style
-function changeView(viewType) {
-    currentViewMode = viewType;
-    renderResults();
-}
-
-    // Pagination calculations
-    const totalPages = Math.ceil(searchResults.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentItems = searchResults.slice(startIndex, endIndex);
-
-    // Change class name so CSS can style it correctly
-    resultsArea.className = currentViewMode + '-view';
-
-    // Draw the HTML based on the selected view mode
-    resultsArea.innerHTML = currentItems.map(movie => {
-        if (currentViewMode === 'grid') {
-            return `
-                <div class="search-result-grid" onclick="goToDetails('${movie}')" style="cursor:pointer; background:#111; border:1px solid #cca43b; padding:20px; border-radius:10px; text-align:center;">
-                    <h3 style="color:#ffa500; font-size:1.2rem; margin:0;">🎬 ${movie.toUpperCase()}</h3>
-                </div>`;
-        } else if (currentViewMode === 'details') {
-            return `
-                <div class="search-result-details" onclick="goToDetails('${movie}')" style="cursor:pointer; background:rgba(255,255,255,0.05); border-left:4px solid #cca43b; padding:15px; margin-bottom:10px; text-align:left;">
-                    <h3 style="color:#ffa500; margin: 0 0 10px 0;">🎬 ${movie.toUpperCase()}</h3>
-                    <p style="color:#bdc3c7; font-size:0.9rem; margin-bottom:10px;">Click here to view the full storyline, watch the trailer, and see cast details.</p>
-                    <button class="btn-main" style="width:auto; padding:5px 15px; font-size:0.8rem;">Watch Trailer</button>
-                </div>`;
-        } else {
-            // Default List View
-            return `
-                <div class="search-result-item" onclick="goToDetails('${movie}')" style="cursor:pointer; padding:15px; border-bottom:1px solid #cca43b; display:flex; justify-content:space-between; align-items:center;">
-                    <span style="color:#ffa500; font-size:1.1rem;">🎬 ${movie.toUpperCase()}</span>
-                    <span style="color:#cca43b; font-weight:bold;">View Details →</span>
-                </div>`;
-        }
-    }).join('');
-
-    renderPagination(totalPages);
-
-
-// Function to change the view style
-function changeView(viewType) {
-    currentViewMode = viewType;
-    renderResults();
-}
-
-
-
 
 function goToDetails(movieName) {
     localStorage.setItem('selectedMovie', movieName);

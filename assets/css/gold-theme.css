@@ -470,20 +470,52 @@ body[href*="silver"] textarea {
         background-color: #333;
         color: #ccc;
     }
-
-
-
-    /* Grid View Styles */
-#resultsArea.grid-view {
+.list-view .search-result-item {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #cca43b;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: rgba(0,0,0,0.2);
+}
+.grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-/* List and Details View Styles */
-#resultsArea.list-view,
-#resultsArea.details-view {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.grid-view .search-result-item {
+    border: 1px solid #cca43b;
+    padding: 20px;
+    text-align: center;
+    background: #1a1a1a;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.grid-view .search-result-item:hover {
+    transform: translateY(-5px);
+    background: #252525;
+}
+
+.movie-title {
+    color: #ffa500;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.movie-desc {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.view-btn {
+    background: #cca43b;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }

@@ -25,25 +25,22 @@
     </header>
 
     <main>
-        <div class="search-container">
-            <h2>Find Your Movie</h2>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Type movie name..." onkeyup="searchMovie()">
-                <i class="search-icon">🔍</i>
-            </div>
-            
-            <div id="viewControls" style="margin-bottom: 20px; display: none;">
-        <button class="btn-main" style="width:auto; padding:8px 15px;" onclick="changeView('list')">List View ≡</button>
-        <button class="btn-main" style="width:auto; padding:8px 15px;" onclick="changeView('grid')">Grid View ⊞</button>
-        <button class="btn-main" style="width:auto; padding:8px 15px;" onclick="changeView('details')">Details View ℹ</button>
-            </div>
-
-            <div id="resultsArea">
-                <p class="error-text">No results found yet.</p>
-            </div>
-
-            
+    <div class="search-container">
+        <h2>Find Your Movie</h2>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Type movie name..." onkeyup="searchMovie()">
+            <i class="search-icon">🔍</i>
         </div>
+
+        <div class="view-controls" style="margin-bottom: 20px; text-align: center;">
+            <button onclick="changeLayout('list-view')" style="padding: 5px 10px; cursor: pointer;">List View</button>
+            <button onclick="changeLayout('grid-view')" style="padding: 5px 10px; cursor: pointer;">Grid View</button>
+        </div>
+        
+        <div id="resultsArea" class="list-view">
+            <p class="error-text">No results found yet.</p>
+        </div>
+    </div>
     </main>
 
     <footer>
