@@ -470,3 +470,20 @@ body[href*="silver"] textarea {
         background-color: #333;
         color: #ccc;
     }
+
+
+
+    /* Grid View Styles */
+#resultsArea.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* List and Details View Styles */
+#resultsArea.list-view,
+#resultsArea.details-view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
