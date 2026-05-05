@@ -455,50 +455,36 @@ body[href*="silver"] textarea {
     margin: 10px 0;
 }
 @media (max-width: 768px) {
-    
     body.home-page main {
         padding: 15px; 
     }
-    
-    
     body.home-page .category .rrooww {
         justify-content: center; 
         gap: 15px; 
-    }
-
-    
+    } 
     body.home-page .movie-card {
         min-width: 150px; 
         width: 45%; 
         height: auto; 
         padding-bottom: 10px;
     }
-
     body.home-page .movie-card img {
         height: 180px;
     }
-
-    
     body.home-page header {
         padding: 0 10px; 
     }
-    
     body.home-page header nav {
         gap: 8px; 
     }
-
     body.home-page header nav a {
         font-size: 12px; 
         padding: 6px 8px; 
     }
-
-    
     body.home-page #btn-switch {
         padding: 6px 10px;
         font-size: 11px;
     }
-    
-    
     body.home-page header .logo-container {
         scale: 0.6;
         margin-right: -15px; 
