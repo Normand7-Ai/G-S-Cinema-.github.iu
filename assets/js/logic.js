@@ -17,10 +17,10 @@ const moviesList = [
     "astronaut", "avatar", "passengers", "interstellar"
 ];
 
-// دالة لتغيير شكل التنسيق
+
 function changeLayout(layoutName) {
     const results = document.getElementById('resultsArea');
-    results.className = layoutName; // يغير الـ Class إلى grid-view أو list-view
+    results.className = layoutName; 
 }
 
 function searchMovie() {
